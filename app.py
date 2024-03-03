@@ -1,7 +1,7 @@
 from llama_index.core import SimpleDirectoryReader, VectorStoreIndex
 import os
 
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = "YOUR_API_KEY"
 
 class StudentAgent:
     def __init__(self, file_path:str) -> None:
