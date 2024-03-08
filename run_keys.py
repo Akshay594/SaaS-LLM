@@ -1,4 +1,5 @@
 import os
+<<<<<<< HEAD
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -11,3 +12,9 @@ def set_keys():
         print("OPENAI_API_KEY has been set successfully.")
     else:
         print("OPENAI_API_KEY is not set. Please check your .env file.")
+=======
+
+
+def set_keys():
+    os.environ['OPENAI_API_KEY'] = "YOUR_API_KEY"
+>>>>>>> origin/main
