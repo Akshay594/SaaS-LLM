@@ -1,5 +1,4 @@
 from llama_index.core import SimpleDirectoryReader, VectorStoreIndex
-<<<<<<< HEAD
 from llama_index.core.query_pipeline import (
     QueryPipeline as QP,
     Link,
@@ -41,18 +40,12 @@ response_synthesis_prompt_str = (
     "Pandas Output: {pandas_output}\n\n"
     "Response: "
 )
-=======
-import os
-
-os.environ["OPENAI_API_KEY"] = "YOUR_API_KEY"
->>>>>>> origin/main
 
 class StudentAgent:
     def __init__(self, file_path:str) -> None:
         reader = SimpleDirectoryReader(input_dir=file_path)
         self.documents = reader.load_data()
         self.index = None
-<<<<<<< HEAD
         self.__input_dir = file_path
         print(f"Document has been loaded from : `{file_path}` folder.")
 
@@ -108,22 +101,3 @@ query_str = "How many students do we have in the data?"
 llm = OpenAI(model="gpt-3.5-turbo")
 response = agent.make_query(query_str, llm)
 print(response)
-=======
-        print(f"Document has been loaded from : `{file_path}` folder.")
-
-    def make_index(self):
-        self.index = VectorStoreIndex.from_documents(self.documents)
-        print("Index has been made: ", self.index)
-
-    def make_query(self, query):
-        query_engine = self.index.as_query_engine()
-        return query_engine.query(query)
-    
-
-
-agent = StudentAgent("data")
-agent.make_index()
-response = agent.make_query("How many students do we have in the data?")
-print(response)
-
->>>>>>> origin/main
