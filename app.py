@@ -1,4 +1,4 @@
-from llama_index.core import SimpleDirectoryReader, VectorStoreIndex
+from llama_index.core import SimpleDirectoryReader
 from llama_index.core.query_pipeline import (
     QueryPipeline as QP,
     Link,
@@ -7,7 +7,6 @@ from llama_index.core.query_pipeline import (
 from llama_index.core.query_engine.pandas import PandasInstructionParser
 from llama_index.core import PromptTemplate
 from llama_index.llms.openai import OpenAI
-
 
 import pandas as pd
 
@@ -93,11 +92,3 @@ class StudentAgent:
         )
         return response
       
-
-
-
-agent = StudentAgent("data")
-query_str = "How many students do we have in the data?"
-llm = OpenAI(model="gpt-3.5-turbo")
-response = agent.make_query(query_str, llm)
-print(response)
